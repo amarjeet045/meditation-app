@@ -20,6 +20,15 @@ let fakeDuration = 1800;
 outline.style.strokeDashoffset = outlineLength;
 outline.style.strokeDasharray = outlineLength;
 
+//pick different sounds by clicking on the button
+sounds.forEach(sound => {
+    sound.addEventListener("click", function() {
+      song.src = this.getAttribute("data-sound");
+      video.src = this.getAttribute("data-video");
+      checkPlaying(song);
+    });
+  });
+
 //this is for the simply play sounds
 play.addEventListener('click' ,()=>{
     checkPlaying(song);
